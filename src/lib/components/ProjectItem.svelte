@@ -1,5 +1,6 @@
 <script>
 	import { ExternalLink, Github } from 'lucide-svelte';
+	import { isEnhancedImage } from '$lib/utils';
 
 	let { image, alt, title, bullets, tags, github, demo } = $props();
 </script>
@@ -9,11 +10,19 @@
 >
 	<div class="flex flex-col md:flex-row">
 		<div class="mb-4 md:mr-6 md:mb-0 md:w-1/3">
-			<img
-				{alt}
-				class="rounded-lg object-cover shadow-lg transition-shadow duration-300 hover:shadow-xl"
-				src={image}
-			/>
+			{#if isEnhancedImage(image)}
+				<enhanced:img
+					{alt}
+					class="rounded-lg object-cover shadow-lg transition-shadow duration-300 hover:shadow-xl"
+					src={image}
+				/>
+			{:else}
+				<img
+					{alt}
+					class="rounded-lg object-cover shadow-lg transition-shadow duration-300 hover:shadow-xl"
+					src={image}
+				/>
+			{/if}
 		</div>
 		<div class="md:w-2/3">
 			<h3 class="mb-3 text-2xl font-semibold text-gray-100">{title}</h3>

@@ -1,16 +1,20 @@
 <script>
 	import { fly } from 'svelte/transition';
+	import { isEnhancedImage } from '$lib/utils';
+
+	import epitechLogo from '$lib/assets/Education/logo-epitech.png?enhanced';
+	import graduationCapIcon from '$lib/assets/Education/graduation-cap-icon.svg';
 
 	const education = [
 		{
-			logo: '/logo-epitech.png',
+			logo: epitechLogo,
 			alt: "Logo de l'école Epitech",
 			title: 'Epitech',
 			institution: 'École informatique',
 			date: '2023 - 2028'
 		},
 		{
-			logo: '/graduation-cap-icon.svg',
+			logo: graduationCapIcon,
 			alt: 'Logo de diplôme',
 			title: 'Baccalauréat - Mention bien',
 			institution: "Spécialités Sciences de l'Ingénieur et Mathématiques",
@@ -30,7 +34,15 @@
 					<div
 						class="mr-4 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-2 sm:h-24 sm:w-24"
 					>
-						<img alt={edu.alt} class="h-12 w-12 object-contain sm:h-20 sm:w-20" src={edu.logo} />
+						{#if isEnhancedImage(edu.logo)}
+							<enhanced:img
+								src={edu.logo}
+								alt={edu.alt}
+								class="h-12 w-12 object-contain sm:h-20 sm:w-20"
+							/>
+						{:else}
+							<img src={edu.logo} alt={edu.alt} class="h-12 w-12 object-contain sm:h-20 sm:w-20" />
+						{/if}
 					</div>
 					<div class="flex-grow">
 						<h3 class="text-xl font-semibold text-gray-100 sm:text-2xl">{edu.title}</h3>

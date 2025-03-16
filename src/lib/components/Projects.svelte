@@ -1,6 +1,11 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import ProjectItem from './ProjectItem.svelte';
+	import ProjectItem from '$lib/components/ProjectItem.svelte';
+
+	import mockupSiteOrangeBusiness from '$lib/assets/Projects/mockup-site-orange_business.png?enhanced';
+	import websiteIntegrationChatbot from '$lib/assets/Projects/website_integration_chatbot.png?enhanced';
+	import webIntegrationPage from '$lib/assets/Projects/website_web_integration_page.png?enhanced';
+	import portfolioEartsup from '$lib/assets/Projects/portfolio-etudiant-eartsup.png?enhanced';
 
 	let selectedCategory = $state('Projets Epitech');
 
@@ -23,7 +28,7 @@
 		},
 		{
 			category: 'Projets Epitech',
-			image: '/mockup-site-orange_business.png', // Veuillez remplacer par l'image réelle de votre projet
+			image: mockupSiteOrangeBusiness, // Veuillez remplacer par l'image réelle de votre projet
 			alt: 'Mockup de landing page pour Orange Business dans le cadre de la project week 2025 à Epitech',
 			title: 'Mockup de landing page pour Orange Business - Project Week 2025',
 			bullets: [
@@ -37,7 +42,7 @@
 		},
 		{
 			category: 'Projets Professionnels',
-			image: '/website_integration_chatbot.png', // Remplacez par les images réelles de projets clients
+			image: websiteIntegrationChatbot, // Remplacez par les images réelles de projets clients
 			alt: 'Chatbot et plateforme d’administration pour Endless Paper',
 			title: 'Chatbot et plateforme d’administration pour Endless Paper',
 			bullets: [
@@ -62,7 +67,7 @@
 		},
 		{
 			category: 'Projets Professionnels',
-			image: '/website_web_integration_page.png',
+			image: webIntegrationPage,
 			alt: 'Page d’intégration web pour Endless Paper',
 			title: 'Page d’intégration Web et améliorations de l’API pour Endless Paper',
 			bullets: [
@@ -73,11 +78,11 @@
 			],
 			tags: ['HTML', 'CSS', 'JavaScript', 'Svelte', 'Collaboration', 'Développement API'],
 			github: '', //  Laisser vide si privé
-			demo: 'https://endlesspaper.app/web-integration.html' //  Laisser vide si pas de démo publique
+			demo: 'https://endlesspaper.app/web-integration.html'
 		},
 		{
 			category: 'Projets Professionnels',
-			image: '/portfolio-etudiant-eartsup.png', // Veuillez remplacer par l'image réelle de votre projet
+			image: portfolioEartsup,
 			alt: 'Site web portfolio pour étudiant à Eartsup',
 			title: 'Site web portfolio pour étudiant à Eartsup',
 			bullets: [

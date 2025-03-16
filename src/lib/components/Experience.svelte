@@ -1,8 +1,13 @@
 <script>
 	import { fly } from 'svelte/transition';
+	import { isEnhancedImage } from '$lib/utils';
+
+	import logoNovasweb from '$lib/assets/Experience/logo-novasweb.png?enhanced';
+	import logoEndlessPaper from '$lib/assets/Experience/endless-paper-logo.svg';
+
 	const experience = [
 		{
-			logo: '/logo-novasweb.png',
+			logo: logoNovasweb,
 			alt: 'Logo d’auto-entrepreneur',
 			title: 'Développeur Web Full-Stack Freelance',
 			company: 'Auto-entrepreneur',
@@ -17,7 +22,7 @@
 			tags: ['SvelteKit', 'PocketBase', 'TypeScript', 'Node.js', 'Développement Full-Stack']
 		},
 		{
-			logo: '/endless-paper-logo.svg',
+			logo: logoEndlessPaper,
 			alt: 'Logo d’Endless Paper',
 			title: 'Stagiaire en Développement Web Full-Stack',
 			company: 'Epiphanie',
@@ -57,7 +62,17 @@
 					<div
 						class="mr-4 flex h-24 w-24 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-2"
 					>
-						<img alt={job.alt} width="40" height="40" class="object-contain" src={job.logo} />
+						{#if isEnhancedImage(job.logo)}
+							<enhanced:img
+								alt={job.alt}
+								width="40"
+								height="40"
+								class="object-contain"
+								src={job.logo}
+							/>
+						{:else}
+							<img alt={job.alt} width="40" height="40" class="object-contain" src={job.logo} />
+						{/if}
 					</div>
 					<div class="flex-grow">
 						<h3 class="text-2xl font-semibold text-gray-100">{job.title}</h3>

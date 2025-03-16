@@ -1,5 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition';
+	import profileImage from '$lib/assets/profile-image.png?enhanced';
 </script>
 
 <header in:fly={{ y: 20, duration: 500 }}>
@@ -7,7 +8,7 @@
 		<enhanced:img
 			alt="Mateo Cabrera"
 			class="object-cover"
-			src="../../assets/profile-image.png"
+			src={profileImage}
 			style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
 		/>
 	</div>
