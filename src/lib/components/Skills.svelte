@@ -3,9 +3,9 @@
 	const skills = {
 		languages: ['JavaScript', 'TypeScript', 'C', 'C++'],
 		frameworks: ['ReactJS', 'NextJS', 'Svelte', 'SvelteKit', 'ExpressJS'],
-		backend: ['Node.js', '.NET', 'REST APIs', 'Microservices'],
+		backend: ['Node.js', '.NET', 'REST APIs'],
 		databases: ['Postgres', 'SQL', 'MongoDB', 'SQLite'],
-		practices: ['Microservices', 'Microfrontend', 'Git']
+		practices: ['Docker', 'Git']
 	};
 </script>
 

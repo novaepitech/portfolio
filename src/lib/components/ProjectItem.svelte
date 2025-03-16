@@ -33,26 +33,26 @@
 				{/each}
 			</div>
 			<div class="mt-4 flex space-x-4">
-				{#if github}
-					<a
-						href={github}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="flex items-center text-gray-300 transition-colors duration-300 hover:text-white"
-					>
-						<Github />
-						<span>Voir le code</span>
-					</a>
-				{/if}
 				{#if demo}
 					<a
 						href={demo}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="flex items-center text-gray-300 transition-colors duration-300 hover:text-white"
+						class="flex items-center gap-2 text-gray-300 transition-colors duration-300 hover:text-white"
 					>
 						<ExternalLink />
-						<span>Live Demo</span>
+						<span>Voir le site</span>
+					</a>
+				{/if}
+				{#if github}
+					<a
+						href={github}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center gap-2 text-gray-300 transition-colors duration-300 hover:text-white"
+					>
+						<Github />
+						<span>Voir le code</span>
 					</a>
 				{/if}
 			</div>

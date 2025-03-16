@@ -2,77 +2,19 @@
 	import { fly } from 'svelte/transition';
 	const experience = [
 		{
-			logo: '/juvare.png',
-			alt: 'Logo de Juvare',
-			title: 'Analyste en implémentation technique (Développeur Web Front-End)',
-			company: 'Juvare',
-			location: 'Melbourne, Australie',
-			date: 'Mars 2024 - Aujourd’hui',
-			bullets: [
-				'Configurer et personnaliser les solutions du framework WebEOC pour répondre aux exigences des clients en matière de systèmes de réponse aux urgences/incidents.',
-				'Assurer la liaison directe avec les clients pour recueillir les exigences et fournir un support technique à la mise en œuvre en Australie et en Nouvelle-Zélande.',
-				'Créer une documentation détaillée sur la configuration du système et des spécifications d’exigences pour les processus de réponse aux urgences/incidents.',
-				'Fournir un support technique de niveau 2 et aider aux activations des centres d’opérations d’urgence (COU) si nécessaire.',
-				'Élaborer et mettre en œuvre des examens de processus, du contenu de formation en ligne et des évaluations d’exercices.'
-			],
-			tags: [
-				'HTML',
-				'CSS',
-				'JavaScript',
-				'jQuery',
-				'Bootstrap',
-				'API REST',
-				'SQL Server',
-				'WebEOC',
-				'Implémentation technique',
-				'Analyse commerciale'
-			]
-		},
-		{
-			logo: '/logo.png',
+			logo: '/logo-novasweb.png',
 			alt: 'Logo d’auto-entrepreneur',
 			title: 'Développeur Web Full-Stack Freelance',
 			company: 'Auto-entrepreneur',
 			location: 'Melbourne, Victoria',
-			date: '2022 - Aujourd’hui',
+			date: '2024 - Aujourd’hui',
 			bullets: [
 				'Réalisation réussie de plus de 20 projets allant des tableaux de bord de base aux pages de destination optimisées pour le référencement naturel en passant par des applications complètes.',
 				'Fourniture de solutions personnalisées adaptées aux besoins des clients, garantissant des performances élevées et une expérience utilisateur optimale.',
-				'Travail avec des technologies web modernes, notamment React, Next.js et Supabase, pour construire des applications évolutives.',
+				'Travail avec des technologies web modernes, notamment SvelteKit et PocketBase, pour construire des applications évolutives.',
 				'Gestion du cycle de vie complet des projets, y compris la planification, le développement et le déploiement.'
 			],
-			tags: ['React', 'Next.js', 'Supabase', 'TypeScript', 'Node.js', 'Développement Full-Stack']
-		},
-		{
-			logo: '/shifti.png',
-			alt: 'Logo de Shifti',
-			title: 'Directeur Technique et Fondateur',
-			company: 'Shifti',
-			location: 'Melbourne, Victoria',
-			date: 'Avril 2023 - Aujourd’hui',
-			bullets: [
-				'Direction du développement d’une plateforme innovante de planification des horaires basée sur l’IA pour le secteur de l’hôtellerie.',
-				'Conception et mise en œuvre d’un backend évolutif basé sur des microservices utilisant Node.js et GraphQL.',
-				'Conception et développement d’une application front-end réactive utilisant React et Next.js.',
-				'Intégration d’algorithmes d’apprentissage automatique avancés pour l’attribution intelligente des horaires et la prévision de la demande.',
-				'Gestion d’une équipe de développeurs, favorisant une culture d’innovation et d’amélioration continue.'
-			],
-			tags: ['NextJS', 'Supabase', 'React Native', 'Expo', 'Apprentissage Automatique', 'Tauri']
-		},
-		{
-			logo: '/preezie.png',
-			alt: 'Logo de Preezie',
-			title: 'Stagiaire en Développement Logiciel',
-			company: 'Preezie',
-			location: 'Melbourne, Victoria',
-			date: 'Novembre 2022 - Mars 2023',
-			bullets: [
-				'Démonstration de compétences en Angular 4, React, .NET et microservices.',
-				'Développement de solutions efficaces à des problèmes complexes et débogage efficace du code.',
-				'Adaptation à des environnements de développement rapides et travail avec des technologies anciennes et modernes.',
-				'Collaboration avec des équipes interfonctionnelles, améliorant la communication et les compétences en travail d’équipe.'
-			],
-			tags: ['Angular 4', 'React', '.NET', 'Microservices']
+			tags: ['SvelteKit', 'PocketBase', 'TypeScript', 'Node.js', 'Développement Full-Stack']
 		},
 		{
 			logo: '/endless-paper-logo.svg',

@@ -7,122 +7,33 @@
 	const projects = [
 		{
 			category: 'Projets Epitech',
-			image: '/homegame-project.jpg',
-			alt: 'HomeGame : Gestionnaire d’analyse pour parties de poker à domicile',
-			title: 'HomeGame : Gestionnaire d’analyse pour parties de poker à domicile',
+			image:
+				'https://github.com/Taker-Academy/Spotiflyx/assets/86067803/8923f7d6-f23e-4a6b-aabf-9e10e4fb8e44', // Logo Spotiflyx depuis le README
+			alt: 'Spotiflyx : Service de streaming musical et vidéo',
+			title: 'Spotiflyx : Service de streaming musical et vidéo',
 			bullets: [
-				'Développement d’une application mobile riche en fonctionnalités pour la gestion et l’analyse de parties de poker à domicile en utilisant React Native et Supabase',
-				'Création d’un moteur d’analyse avancé fournissant des informations sur le déroulement du jeu, les taux de victoire et les axes d’amélioration',
-				'Implémentation d’un mode hors ligne avec synchronisation des données et intégration d’API tierces pour le calcul des probabilités'
+				"Développement d'une application web de streaming musical et vidéo combinant Spotify et YouTube.",
+				'Utilisation de Next.js pour le frontend, Go pour le backend et PostgreSQL pour la base de données.',
+				"Implémentation de l'authentification utilisateur, de la recherche de médias, de la gestion des favoris et de la lecture de médias.",
+				"Architecture Dockerisée pour faciliter le déploiement et la gestion de l'application."
 			],
-			tags: ['Supabase', 'React Native', 'Expo'],
-			github: 'https://github.com/yourusername/homegame', // Remplacez yourusername
-			demo: 'https://homegame-app.com'
+			tags: ['Next.js', 'Tailwind CSS', 'Go', 'PostgreSQL', 'Docker', 'Spotify API', 'YouTube API'],
+			github: 'https://github.com/yourusername/spotiflyx', // Remplacez yourusername par le lien de votre repo
+			demo: '' // Ajoutez un lien de démo si vous en avez un
 		},
 		{
 			category: 'Projets Epitech',
-			image: '/cafe-loyalty-project.jpg',
-			alt: 'BrewPoints : Application de fidélité pour cafés',
-			title: 'BrewPoints : Application de fidélité pour cafés',
+			image: '/mockup-site-orange_business.png', // Veuillez remplacer par l'image réelle de votre projet
+			alt: 'Mockup de landing page pour Orange Business dans le cadre de la project week 2025 à Epitech',
+			title: 'Mockup de landing page pour Orange Business - Project Week 2025',
 			bullets: [
-				'Développement d’une solution d’application de fidélité full-stack pour les cafés indépendants, comprenant des applications mobiles React Native, un backend Node.js avec API GraphQL et une base de données MongoDB',
-				'Intégration avec divers systèmes de point de vente (POS) en utilisant un modèle d’adaptateur flexible',
-				'Implémentation du suivi des commandes en temps réel et des notifications en utilisant Socket.io',
-				'Conception d’un système de programme de fidélité personnalisable avec tableau de bord analytique pour les propriétaires de cafés'
+				"Création d'un mockup de landing page pour Orange Business dans le cadre de la project week 2025 à Epitech.",
+				"Refonte de l'identité digitale d'Orange Business à travers une nouvelle proposition de landing page.",
+				'Maquette réalisée dans le but de présenter une direction créative, non destinée à la production.'
 			],
-			tags: ['React Native', 'Expo', 'Node.js', 'GraphQL', 'MongoDB'],
-			github: 'https://github.com/yourusername/cafe-loyalty', // Remplacez yourusername
-			demo: 'https://cafeloyalty-demo.com'
-		},
-		{
-			category: 'Projets Epitech',
-			image: '/password-manager-project.jpg',
-			alt: 'Gestionnaire de mots de passe résistant aux [attaques] quantiques',
-			title: 'Gestionnaire de mots de passe résistant aux [attaques] quantiques',
-			bullets: [
-				'Développement d’un gestionnaire de mots de passe cryptographiquement sécurisé et haute performance en utilisant Rust et des algorithmes post-quantiques',
-				'Conception d’une architecture zéro-knowledge, améliorant la confidentialité et la sécurité des utilisateurs',
-				'Utilisation de structures de données efficaces (B-trees) pour un stockage et une récupération optimisés des mots de passe',
-				'Implémentation de fonctionnalités avancées incluant l’authentification à deux facteurs (2FA), le partage sécurisé de mots de passe et les sauvegardes chiffrées'
-			],
-			tags: ['Rust', 'Cryptographie Post-Quantique'],
-			github: 'https://github.com/yourusername/quantum-pass', // Remplacez yourusername
-			demo: 'https://quantum-pass-demo.com'
-		},
-		{
-			category: 'Projets Epitech',
-			image: '/invoice-ninja-project.jpg',
-			alt: 'InvoiceNinja : Application de facturation pour freelances',
-			title: 'InvoiceNinja : Application de facturation pour freelances',
-			bullets: [
-				'Développement d’une application de facturation conviviale conçue pour les freelances',
-				'Implémentation de fonctionnalités telles que la génération de factures, le suivi des dépenses et la gestion des clients',
-				'Intégration de passerelles de paiement pour des paiements en ligne fluides',
-				'Création de rapports financiers perspicaces et de tableaux de bord pour l’analyse commerciale'
-			],
-			tags: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
-			github: 'https://github.com/yourusername/invoice-ninja', // Remplacez yourusername
-			demo: 'https://invoice-ninja-demo.com'
-		},
-		{
-			category: 'Projets Epitech',
-			image: '/fitquest-project.jpg',
-			alt: 'FitQuest : Compagnon d’entraînement interactif',
-			title: 'FitQuest : Compagnon d’entraînement interactif',
-			bullets: [
-				'Construction d’une application d’entraînement ludique pour rendre les routines de fitness plus engageantes',
-				'Conception de plans d’entraînement personnalisés basés sur les objectifs et les niveaux de forme physique des utilisateurs',
-				'Implémentation du suivi des progrès et d’un système de réussite pour renforcer la motivation des utilisateurs',
-				'Intégration avec des appareils portables pour la synchronisation des données d’entraînement en temps réel'
-			],
-			tags: ['React Native', 'Firebase', 'TensorFlow.js'],
-			github: 'https://github.com/yourusername/fitquest', // Remplacez yourusername
-			demo: 'https://fitquest-demo.com'
-		},
-		{
-			category: 'Projets Epitech',
-			image: '/studybuddy-project.jpg',
-			alt: 'StudyBuddy : Planificateur de devoirs et Suivi des acquis antérieurs',
-			title: 'StudyBuddy : Planificateur de devoirs et Suivi des acquis antérieurs',
-			bullets: [
-				'Création d’un outil complet de gestion des études pour les étudiants',
-				'Développement de fonctionnalités pour la planification des devoirs, le suivi des échéances et la programmation des sessions d’étude',
-				'Implémentation d’une section d’acquis antérieurs pour suivre et revoir le matériel précédemment appris',
-				'Intégration avec des applications de calendrier populaires pour une synchronisation transparente des calendriers'
-			],
-			tags: ['Vue.js', 'Express.js', 'PostgreSQL'],
-			github: 'https://github.com/yourusername/studybuddy', // Remplacez yourusername
-			demo: 'https://studybuddy-demo.com'
-		},
-		{
-			category: 'Projets Epitech',
-			image: '/collectify-project.jpg',
-			alt: 'Collectify : Gestionnaire de collections personnelles',
-			title: 'Collectify : Gestionnaire de collections personnelles',
-			bullets: [
-				'Développement d’une application polyvalente pour la création et la gestion de collections personnelles',
-				'Implémentation de fonctionnalités pour l’ajout, la catégorisation et le marquage d’éléments au sein des collections',
-				'Création d’un système de recherche et de filtrage pour une navigation facile dans les grandes collections',
-				'Conception d’une interface conviviale pour une gestion fluide des collections'
-			],
-			tags: ['React', 'Redux', 'Node.js', 'MongoDB'],
-			github: 'https://github.com/yourusername/collectify', // Remplacez yourusername
-			demo: 'https://collectify-demo.com'
-		},
-		{
-			category: 'Projets Epitech',
-			image: '/showtrackr-project.jpg',
-			alt: 'ShowTrackr : Suivi des sorties TV et cinéma',
-			title: 'ShowTrackr : Suivi des sorties TV et cinéma',
-			bullets: [
-				'Construction d’une application pour suivre les nouvelles sorties d’émissions de télévision et de films',
-				'Intégration avec des bases de données multimédias populaires pour récupérer des informations précises et à jour',
-				'Implémentation de listes de surveillance personnalisées et de notifications pour les sorties à venir',
-				'Création d’un système de recommandation basé sur les préférences de l’utilisateur et l’historique de visionnage'
-			],
-			tags: ['Angular', 'NestJS', 'PostgreSQL', 'TMDb API'],
-			github: 'https://github.com/yourusername/showtrackr', // Remplacez yourusername
-			demo: 'https://showtrackr-demo.com'
+			tags: ['Next.js', 'Tailwind CSS'],
+			github: '',
+			demo: 'https://orange-business-website-refresh-concept.vercel.app/'
 		},
 		{
 			category: 'Projets Professionnels',
@@ -175,7 +86,7 @@
 				'Implémentation des View Transitions pour une navigation utilisateur élégante et sans rupture.'
 			],
 			tags: ['Astro', 'View Transitions', 'TailwindCSS'],
-			github: '', // Laisser vide ou ajouter le lien GitHub si applicable
+			github: '',
 			demo: 'https://astro-portfolio-louis-bucher.pages.dev' // Laisser vide ou ajouter le lien de démonstration si applicable
 		}
 	];
