@@ -3,7 +3,7 @@
 	const skills = {
 		languages: ['JavaScript', 'TypeScript', 'C', 'C++'],
 		frameworks: ['ReactJS', 'NextJS', 'Svelte', 'SvelteKit', 'ExpressJS'],
-		backend: ['Node.js', 'ExpressJS', 'REST APIs'],
+		backend: ['Node.js', 'ExpressJS', 'PocketBase', 'REST APIs'],
 		databases: ['PostgreSQL', 'PrismaORM', 'MongoDB', 'SQLite'],
 		tools: ['Docker', 'Git', 'Cloudflare']
 	};

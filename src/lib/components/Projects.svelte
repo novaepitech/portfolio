@@ -6,14 +6,14 @@
 	import websiteIntegrationChatbot from '$lib/assets/Projects/website_integration_chatbot.png?enhanced';
 	import webIntegrationPage from '$lib/assets/Projects/website_web_integration_page.png?enhanced';
 	import portfolioEartsup from '$lib/assets/Projects/portfolio-etudiant-eartsup.png?enhanced';
+	import spotiflyx from '$lib/assets/Projects/screenshot-spotiflyx.png?enhanced';
 
 	let selectedCategory = $state('Projets Epitech');
 
 	const projects = [
 		{
 			category: 'Projets Epitech',
-			image:
-				'https://github.com/Taker-Academy/Spotiflyx/assets/86067803/8923f7d6-f23e-4a6b-aabf-9e10e4fb8e44', // Logo Spotiflyx depuis le README
+			image: spotiflyx,
 			alt: 'Spotiflyx : Service de streaming musical et vidéo',
 			title: 'Spotiflyx : Service de streaming musical et vidéo',
 			bullets: [
@@ -23,8 +23,8 @@
 				"Architecture Dockerisée pour faciliter le déploiement et la gestion de l'application."
 			],
 			tags: ['Next.js', 'Tailwind CSS', 'Go', 'PostgreSQL', 'Docker', 'Spotify API', 'YouTube API'],
-			github: 'https://github.com/yourusername/spotiflyx', // Remplacez yourusername par le lien de votre repo
-			demo: '' // Ajoutez un lien de démo si vous en avez un
+			github: 'https://github.com/Taker-Academy/spotiflyx-apanyan',
+			demo: ''
 		},
 		{
 			category: 'Projets Epitech',
@@ -37,7 +37,7 @@
 				'Maquette réalisée dans le but de présenter une direction créative, non destinée à la production.'
 			],
 			tags: ['Next.js', 'Tailwind CSS'],
-			github: '',
+			github: 'https://github.com/novaepitech/Orange-Business-Website-Refresh-Concept-',
 			demo: 'https://orange-business-website-refresh-concept.vercel.app/'
 		},
 		{
@@ -48,7 +48,7 @@
 			bullets: [
 				'Développement d’un chatbot intelligent pour le site web Endless Paper afin de fournir un support client instantané.',
 				'Création d’une plateforme d’administration conviviale pour l’équipe Epiphanie afin de gérer les conversations du chatbot et d’améliorer ses performances.',
-				"Implémentation d'un système 'Humain dans la boucle' (HITL) pour une intervention d’agent fluide.",
+				"Implémentation d'un système 'Human In The Loop' (HITL) pour une intervention d’agent fluide.",
 				'Optimisation des performances et de l’intégration du chatbot en utilisant SvelteKit et les événements envoyés par le serveur (SSE).'
 			],
 			tags: [
@@ -77,7 +77,7 @@
 				'Contribution à la refactorisation de l’interface de surveillance des Expériences Web.'
 			],
 			tags: ['HTML', 'CSS', 'JavaScript', 'Svelte', 'Collaboration', 'Développement API'],
-			github: '', //  Laisser vide si privé
+			github: '',
 			demo: 'https://endlesspaper.app/web-integration.html'
 		},
 		{
@@ -92,7 +92,7 @@
 			],
 			tags: ['Astro', 'View Transitions', 'TailwindCSS'],
 			github: '',
-			demo: 'https://astro-portfolio-louis-bucher.pages.dev' // Laisser vide ou ajouter le lien de démonstration si applicable
+			demo: 'https://astro-portfolio-louis-bucher.pages.dev'
 		}
 	];
 
