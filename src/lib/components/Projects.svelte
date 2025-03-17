@@ -8,7 +8,7 @@
 	import portfolioEartsup from '$lib/assets/Projects/portfolio-etudiant-eartsup.png?enhanced';
 	import spotiflyx from '$lib/assets/Projects/screenshot-spotiflyx.png?enhanced';
 
-	let selectedCategory = $state('Projets Epitech');
+	let selectedCategory = $state('Projets Professionnels');
 
 	const projects = [
 		{
@@ -122,21 +122,21 @@
 	<div class="mb-8 flex space-x-4">
 		<button
 			class="cursor-pointer rounded-lg px-4 py-2 transition-colors duration-300 {selectedCategory ===
-			'Projets Epitech'
-				? 'bg-gray-700 text-white'
-				: 'text-gray-400 hover:text-white'}"
-			onclick={() => (selectedCategory = 'Projets Epitech')}
-		>
-			Projets Epitech
-		</button>
-		<button
-			class="cursor-pointer rounded-lg px-4 py-2 transition-colors duration-300 {selectedCategory ===
 			'Projets Professionnels'
 				? 'bg-gray-700 text-white'
 				: 'text-gray-400 hover:text-white'}"
 			onclick={() => (selectedCategory = 'Projets Professionnels')}
 		>
 			Projets Professionnels
+		</button>
+		<button
+			class="cursor-pointer rounded-lg px-4 py-2 transition-colors duration-300 {selectedCategory ===
+			'Projets Epitech'
+				? 'bg-gray-700 text-white'
+				: 'text-gray-400 hover:text-white'}"
+			onclick={() => (selectedCategory = 'Projets Epitech')}
+		>
+			Projets Epitech
 		</button>
 	</div>
 	<ul class="space-y-12">
