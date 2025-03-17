@@ -3,17 +3,29 @@
 	const skills = {
 		languages: ['JavaScript', 'TypeScript', 'C', 'C++'],
 		frameworks: ['ReactJS', 'NextJS', 'Svelte', 'SvelteKit', 'ExpressJS'],
-		backend: ['Node.js', 'REST APIs'],
-		databases: ['Postgres', 'SQL', 'MongoDB', 'SQLite'],
-		practices: ['Docker', 'Git', 'Cloudflare']
+		backend: ['Node.js', 'ExpressJS', 'REST APIs'],
+		databases: ['PostgreSQL', 'PrismaORM', 'MongoDB', 'SQLite'],
+		tools: ['Docker', 'Git', 'Cloudflare']
 	};
 </script>
 
 <div in:fly={{ y: 20, duration: 500, delay: 300 }}>
-	<h2 class="mb-6 text-3xl font-bold text-gray-100">Skills</h2>
+	<h2 class="mb-6 text-3xl font-bold text-gray-100">Compétences</h2>
 	{#each Object.entries(skills) as [category, items]}
 		<div class="mb-4">
-			<h4 class="mb-2 text-xl font-semibold text-gray-200 capitalize">{category}</h4>
+			<h4 class="mb-2 text-xl font-semibold text-gray-200 capitalize">
+				{#if category === 'languages'}
+					Langages
+				{:else if category === 'frameworks'}
+					Frameworks
+				{:else if category === 'backend'}
+					Backend
+				{:else if category === 'databases'}
+					Bases de données
+				{:else if category === 'tools'}
+					Outils
+				{/if}
+			</h4>
 			<div class="flex flex-wrap">
 				{#each items as item}
 					<span
@@ -22,7 +34,7 @@
                        ${category === 'frameworks' ? 'bg-green-500/30 text-green-500' : ''}
                        ${category === 'backend' ? 'bg-purple-500/30 text-purple-500' : ''}
                        ${category === 'databases' ? 'bg-red-500/30 text-red-500' : ''}
-                       ${category === 'practices' ? 'bg-yellow-500/30 text-yellow-500' : ''}
+                       ${category === 'tools' ? 'bg-yellow-500/30 text-yellow-500' : ''}
                       `}>{item}</span
 					>
 				{/each}
