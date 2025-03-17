@@ -22,8 +22,7 @@
 
 <svelte:head>
 	<title>Mateo Cabrera</title>
-	<meta name="description" content="Full Stack Developer" />
-	<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+	<meta name="description" content="Développeur Web Full Stack" />
 </svelte:head>
 
 <div class="min-h-screen bg-[#111111] text-white">
