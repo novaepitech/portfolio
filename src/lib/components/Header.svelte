@@ -13,10 +13,10 @@
 		/>
 	</div>
 	<h1 class="mb-2 text-4xl font-bold">Mateo Cabrera</h1>
-	<h2 class="mb-4 text-xl text-gray-400">Full Stack Web Developer</h2>
+	<h2 class="mb-4 text-xl text-gray-400">Développeur Web Full Stack</h2>
 	<h3 class="mb-4 text-lg text-gray-400">📍 Strasbourg, France 🇫🇷</h3>
 	<p class="text-sm text-gray-300">
-		Building Real Products For Real Clients, Not Just More Projects
+		Créer de vrais produits pour de vrais clients, pas juste des projets supplémentaires.
 	</p>
 
 	<div class="mt-6">
