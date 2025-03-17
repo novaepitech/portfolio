@@ -4,8 +4,16 @@
 
 	import epitechLogo from '$lib/assets/Education/logo-epitech.png?enhanced';
 	import graduationCapIcon from '$lib/assets/Education/graduation-cap-icon.svg';
+	import logoTakerAcademy from '$lib/assets/Education/logo-taker-academy.webp?enhanced';
 
 	const education = [
+		{
+			logo: logoTakerAcademy,
+			alt: 'Logo de formation',
+			title: 'TakerAcademy',
+			institution: 'Formation web fullstack - Taker Junior Entreprise Epitech',
+			date: 'Janvier 2024 - Juin 2024'
+		},
 		{
 			logo: epitechLogo,
 			alt: "Logo de l'école Epitech",
@@ -32,16 +40,16 @@
 			>
 				<div class="mb-2 flex items-start">
 					<div
-						class="mr-4 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-2 sm:h-24 sm:w-24"
+						class="mr-4 flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-white sm:h-24 sm:w-24"
 					>
 						{#if isEnhancedImage(edu.logo)}
 							<enhanced:img
 								src={edu.logo}
 								alt={edu.alt}
-								class="h-12 w-12 object-contain sm:h-20 sm:w-20"
+								class="h-12 w-12 object-contain sm:h-24 sm:w-24"
 							/>
 						{:else}
-							<img src={edu.logo} alt={edu.alt} class="h-12 w-12 object-contain sm:h-20 sm:w-20" />
+							<img src={edu.logo.toString()} alt={edu.alt} class="h-12 w-12 object-contain sm:h-24 sm:w-24" />
 						{/if}
 					</div>
 					<div class="flex-grow">
