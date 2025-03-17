@@ -58,12 +58,28 @@
 				'SSE',
 				'Nginx',
 				'SQLite',
-				'Prisma',
+				'Prisma ORM',
 				'TypeScript',
 				'Développement assisté par IA'
 			],
 			github: '',
 			demo: 'https://endlesspaper.app/index.html'
+		},
+		{
+			category: 'Projets Professionnels',
+			image: 'https://i.giphy.com/CUfUNnOyogsgTgSzfn.webp',
+			alt: 'Plateforme Intranet/Extranet pour Laboratoire de Prothèses Dentaires',
+			title: 'Plateforme Intranet/Extranet pour Laboratoire de Prothèses Dentaires',
+			bullets: [
+				"Développement d'une plateforme web full-stack Intranet/Extranet pour la gestion complète d'un laboratoire de prothèses dentaires.",
+				'Centralisation des commandes, des documents (fiches de travail, DMSM, factures) et de la communication avec les praticiens dentaires.',
+				'Fonctionnalités intranet pour les administrateurs : gestion des clients, documents, produits (backend implémenté).',
+				'Extranet client pour les praticiens : suivi des commandes, accès sécurisé aux documents, authentification OTP.',
+				"Optimisation du flux de travail en remplaçant les processus papier et les échanges d'emails traditionnels."
+			],
+			tags: ['SvelteKit', 'TypeScript', 'Tailwind CSS', 'PocketBase', 'Authentification OTP'],
+			github: '',
+			demo: ''
 		},
 		{
 			category: 'Projets Professionnels',
