@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { fly } from 'svelte/transition';
 	import ProjectItem from '$lib/components/ProjectItem.svelte';
 
@@ -9,6 +9,22 @@
 	import spotiflyx from '$lib/assets/Projects/screenshot-spotiflyx.png?enhanced';
 
 	let selectedCategory = $state('Projets Professionnels');
+
+	let professionnelsTab: HTMLButtonElement | undefined;
+	let epitechTab: HTMLButtonElement | undefined;
+
+	let activeTabWidth = $state(0);
+	let activeTabLeft = $state(0);
+
+	$effect(() => {
+		if (selectedCategory === 'Projets Professionnels' && professionnelsTab) {
+			activeTabWidth = professionnelsTab.offsetWidth;
+			activeTabLeft = professionnelsTab.offsetLeft;
+		} else if (selectedCategory === 'Projets Epitech' && epitechTab) {
+			activeTabWidth = epitechTab.offsetWidth;
+			activeTabLeft = epitechTab.offsetLeft;
+		}
+	});
 
 	const projects = [
 		{
@@ -28,7 +44,7 @@
 		},
 		{
 			category: 'Projets Epitech',
-			image: mockupSiteOrangeBusiness, // Veuillez remplacer par l'image réelle de votre projet
+			image: mockupSiteOrangeBusiness,
 			alt: 'Mockup de landing page pour Orange Business dans le cadre de la project week 2025 à Epitech',
 			title: 'Mockup de landing page pour Orange Business - Project Week 2025',
 			bullets: [
@@ -42,7 +58,7 @@
 		},
 		{
 			category: 'Projets Professionnels',
-			image: websiteIntegrationChatbot, // Remplacez par les images réelles de projets clients
+			image: websiteIntegrationChatbot,
 			alt: 'Chatbot et plateforme d’administration pour Endless Paper',
 			title: 'Chatbot et plateforme d’administration pour Endless Paper',
 			bullets: [
@@ -119,26 +135,37 @@
 
 <section id="projects" class="mb-12" in:fly={{ y: 20, duration: 500, delay: 600 }}>
 	<h2 class="mb-6 text-3xl font-bold text-gray-100">Projets</h2>
-	<div class="mb-8 flex space-x-4">
-		<button
-			class="cursor-pointer rounded-lg px-4 py-2 transition-colors duration-300 {selectedCategory ===
-			'Projets Professionnels'
-				? 'bg-gray-700 text-white'
-				: 'text-gray-400 hover:text-white'}"
-			onclick={() => (selectedCategory = 'Projets Professionnels')}
-		>
-			Projets Professionnels
-		</button>
-		<button
-			class="cursor-pointer rounded-lg px-4 py-2 transition-colors duration-300 {selectedCategory ===
-			'Projets Epitech'
-				? 'bg-gray-700 text-white'
-				: 'text-gray-400 hover:text-white'}"
-			onclick={() => (selectedCategory = 'Projets Epitech')}
-		>
-			Projets Epitech
-		</button>
+
+	<div class="relative mb-8">
+		<div class="relative inline-flex w-full max-w-md rounded-lg bg-gray-800/50 p-1">
+			<div
+				class="absolute top-1 h-[calc(100%-8px)] rounded-md bg-gray-700 transition-all duration-180 ease-out"
+				style="width: {activeTabWidth}px; left: {activeTabLeft}px;"
+			></div>
+
+			<button
+				bind:this={professionnelsTab}
+				class="relative z-10 flex-1 cursor-pointer rounded-md px-2 py-2 text-center font-medium transition-colors duration-180 {selectedCategory ===
+				'Projets Professionnels'
+					? 'text-white'
+					: 'text-gray-400 hover:text-white'}"
+				onclick={() => (selectedCategory = 'Projets Professionnels')}
+			>
+				Projets Professionnels
+			</button>
+			<button
+				bind:this={epitechTab}
+				class="relative z-10 flex-1 cursor-pointer rounded-md px-2 py-2 text-center font-medium transition-colors duration-180 {selectedCategory ===
+				'Projets Epitech'
+					? 'text-white'
+					: 'text-gray-400 hover:text-white'}"
+				onclick={() => (selectedCategory = 'Projets Epitech')}
+			>
+				Projets Epitech
+			</button>
+		</div>
 	</div>
+
 	<ul class="space-y-12">
 		{#each filteredProjects as project (project.title)}
 			<ProjectItem {...project} />
