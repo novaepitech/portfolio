@@ -2,7 +2,7 @@
 	import { fly } from 'svelte/transition';
 	const skills = {
 		languages: ['JavaScript', 'TypeScript', 'C', 'C++'],
-		frameworks: ['ReactJS', 'NextJS', 'Svelte', 'SvelteKit', 'ExpressJS'],
+		frameworks: ['ReactJS', 'NextJS', 'Svelte', 'SvelteKit', 'Astro'],
 		backend: ['Node.js', 'ExpressJS', 'PocketBase', 'REST APIs'],
 		databases: ['PostgreSQL', 'PrismaORM', 'MongoDB', 'SQLite'],
 		tools: ['Docker', 'Git', 'Cloudflare']
