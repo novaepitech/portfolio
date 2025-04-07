@@ -4,6 +4,7 @@
 
 	import mockupSiteOrangeBusiness from '$lib/assets/Projects/mockup-site-orange_business.png?enhanced';
 	import websiteIntegrationChatbot from '$lib/assets/Projects/website_integration_chatbot.png?enhanced';
+	import demoBocajoviConnect from '$lib/assets/Projects/demo-bocajovi_connect-compressed.gif';
 	import webIntegrationPage from '$lib/assets/Projects/website_web_integration_page.png?enhanced';
 	import portfolioEartsup from '$lib/assets/Projects/portfolio-etudiant-eartsup.png?enhanced';
 	import spotiflyx from '$lib/assets/Projects/screenshot-spotiflyx.png?enhanced';
@@ -83,7 +84,7 @@
 		},
 		{
 			category: 'Projets Professionnels',
-			image: 'https://i.giphy.com/CUfUNnOyogsgTgSzfn.webp',
+			image: demoBocajoviConnect,
 			alt: 'Plateforme Intranet/Extranet pour Laboratoire de Prothèses Dentaires',
 			title: 'Plateforme Intranet/Extranet pour Laboratoire de Prothèses Dentaires',
 			bullets: [
