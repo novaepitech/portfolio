@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import ProjectItem from '$lib/components/ProjectItem.svelte';
 
+	import unseenAnomaly from '$lib/assets/Projects/unseen_anomaly.png?enhanced';
 	import mockupSiteOrangeBusiness from '$lib/assets/Projects/mockup-site-orange_business.png?enhanced';
 	import websiteIntegrationChatbot from '$lib/assets/Projects/website_integration_chatbot.png?enhanced';
 	import demoBocajoviConnect from '$lib/assets/Projects/demo-bocajovi_connect-compressed.gif';
@@ -12,7 +13,7 @@
 	let selectedCategory = $state('Projets Professionnels');
 
 	let professionnelsTab: HTMLButtonElement | undefined;
-	let epitechTab: HTMLButtonElement | undefined;
+	let personnelsTab: HTMLButtonElement | undefined;
 
 	let activeTabWidth = $state(0);
 	let activeTabLeft = $state(0);
@@ -21,15 +22,30 @@
 		if (selectedCategory === 'Projets Professionnels' && professionnelsTab) {
 			activeTabWidth = professionnelsTab.offsetWidth;
 			activeTabLeft = professionnelsTab.offsetLeft;
-		} else if (selectedCategory === 'Projets Epitech' && epitechTab) {
-			activeTabWidth = epitechTab.offsetWidth;
-			activeTabLeft = epitechTab.offsetLeft;
+		} else if (selectedCategory === 'Projets Personnels' && personnelsTab) {
+			activeTabWidth = personnelsTab.offsetWidth;
+			activeTabLeft = personnelsTab.offsetLeft;
 		}
 	});
 
 	const projects = [
 		{
-			category: 'Projets Epitech',
+			category: 'Projets Personnels',
+			image: unseenAnomaly,
+			alt: 'Jeu vidéo Unseen Anomaly développé avec Godot',
+			title: 'Unseen Anomaly - Godot Game Jam',
+			bullets: [
+				"Développement d'un jeu d'horreur psychologique complet pour la Godot Wild Jam #82 sur le thème 'Unseen'.",
+				'Création d’une boucle de jeu basée sur l’observation d’anomalies visuelles, sonores et physiques dans un environnement qui se répète.',
+				"Mise en place d'une architecture de projet robuste avec un gestionnaire d'état global (AutoLoad) et des scènes héritées pour une modularité maximale.",
+				"Débogage de problématiques techniques complexes telles que les dépendances circulaires et les conditions de course ('race conditions') des signaux."
+			],
+			tags: ['Godot', 'GDScript', 'Game Design', 'Développement de Jeu', 'Blender'],
+			github: 'https://github.com/novaepitech/unseen-anomaly',
+			demo: 'https://vanova.itch.io/unseen-anomaly'
+		},
+		{
+			category: 'Projets Personnels',
 			image: spotiflyx,
 			alt: 'Spotiflyx : Service de streaming musical et vidéo',
 			title: 'Spotiflyx : Service de streaming musical et vidéo',
@@ -44,7 +60,7 @@
 			demo: ''
 		},
 		{
-			category: 'Projets Epitech',
+			category: 'Projets Personnels',
 			image: mockupSiteOrangeBusiness,
 			alt: 'Mockup de landing page pour Orange Business dans le cadre de la project week 2025 à Epitech',
 			title: 'Mockup de landing page pour Orange Business - Project Week 2025',
@@ -155,14 +171,14 @@
 				Projets Professionnels
 			</button>
 			<button
-				bind:this={epitechTab}
+				bind:this={personnelsTab}
 				class="relative z-10 flex-1 cursor-pointer rounded-md px-2 py-2 text-center font-medium transition-colors duration-180 {selectedCategory ===
-				'Projets Epitech'
+				'Projets Personnels'
 					? 'text-white'
 					: 'text-gray-400 hover:text-white'}"
-				onclick={() => (selectedCategory = 'Projets Epitech')}
+				onclick={() => (selectedCategory = 'Projets Personnels')}
 			>
-				Projets Epitech
+				Projets Personnels
 			</button>
 		</div>
 	</div>
