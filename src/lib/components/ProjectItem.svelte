@@ -2,7 +2,14 @@
 	import { ExternalLink, Github } from 'lucide-svelte';
 	import { isEnhancedImage } from '$lib/utils';
 
-	let { image, alt, title, bullets, tags, github, demo } = $props();
+	// Add `type` to the destructured props
+	let { image, alt, title, bullets, tags, github, demo, type } = $props();
+
+	// Define classes for the new 'type' badge for easy styling
+	const typeClasses = {
+		Professionnel: 'bg-blue-500/30 text-blue-400',
+		Personnel: 'bg-purple-500/30 text-purple-400'
+	};
 </script>
 
 <li
@@ -27,7 +34,19 @@
 			{/if}
 		</div>
 		<div class="md:w-2/3">
-			<h3 class="mb-3 text-2xl font-semibold text-gray-100">{title}</h3>
+			<div class="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+				<h3 class="text-2xl font-semibold text-gray-100">{title}</h3>
+				<!-- Add the 'type' badge next to the title -->
+				{#if type}
+					<span
+						class="inline-block rounded-full px-3 py-1 text-xs font-semibold {typeClasses[type] ||
+							'bg-gray-500/30 text-gray-400'}"
+					>
+						{type}
+					</span>
+				{/if}
+			</div>
+
 			<ul class="mb-4 space-y-2 text-gray-300">
 				{#each bullets as bullet}
 					<li class="flex items-start">

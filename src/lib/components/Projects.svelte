@@ -11,27 +11,29 @@
 	import portfolioEartsup from '$lib/assets/Projects/portfolio-etudiant-eartsup.png?enhanced';
 	import spotiflyx from '$lib/assets/Projects/screenshot-spotiflyx.png?enhanced';
 
-	let selectedCategory = $state('Projets Professionnels');
+	// Default to 'Projets de Jeux Vidéo' to immediately show the most relevant projects
+	let selectedCategory = $state('Projets de Jeux Vidéo');
 
-	let professionnelsTab: HTMLButtonElement | undefined;
-	let personnelsTab: HTMLButtonElement | undefined;
+	let gameDevTab: HTMLButtonElement | undefined;
+	let webTab: HTMLButtonElement | undefined;
 
 	let activeTabWidth = $state(0);
 	let activeTabLeft = $state(0);
 
 	$effect(() => {
-		if (selectedCategory === 'Projets Professionnels' && professionnelsTab) {
-			activeTabWidth = professionnelsTab.offsetWidth;
-			activeTabLeft = professionnelsTab.offsetLeft;
-		} else if (selectedCategory === 'Projets Personnels' && personnelsTab) {
-			activeTabWidth = personnelsTab.offsetWidth;
-			activeTabLeft = personnelsTab.offsetLeft;
+		if (selectedCategory === 'Projets de Jeux Vidéo' && gameDevTab) {
+			activeTabWidth = gameDevTab.offsetWidth;
+			activeTabLeft = gameDevTab.offsetLeft;
+		} else if (selectedCategory === 'Projets Web' && webTab) {
+			activeTabWidth = webTab.offsetWidth;
+			activeTabLeft = webTab.offsetLeft;
 		}
 	});
 
 	const projects = [
 		{
-			category: 'Projets Personnels',
+			category: 'Projets de Jeux Vidéo',
+			type: 'Personnel',
 			image: forgeFever,
 			alt: 'Jeu de rythme Forge Fever développé pour la GMTK Game Jam 2025',
 			title: 'Forge FeveR - GMTK Game Jam 2025',
@@ -46,7 +48,8 @@
 			demo: 'https://vanova.itch.io/forge-fever'
 		},
 		{
-			category: 'Projets Personnels',
+			category: 'Projets de Jeux Vidéo',
+			type: 'Personnel',
 			image: unseenAnomaly,
 			alt: 'Jeu vidéo Unseen Anomaly développé avec Godot',
 			title: 'Unseen Anomaly - Godot Game Jam',
@@ -61,36 +64,8 @@
 			demo: 'https://vanova.itch.io/unseen-anomaly'
 		},
 		{
-			category: 'Projets Personnels',
-			image: spotiflyx,
-			alt: 'Spotiflyx : Service de streaming musical et vidéo',
-			title: 'Spotiflyx : Service de streaming musical et vidéo',
-			bullets: [
-				"Développement d'une application web de streaming musical et vidéo combinant Spotify et YouTube.",
-				'Utilisation de Next.js pour le frontend, Go pour le backend et PostgreSQL pour la base de données.',
-				"Implémentation de l'authentification utilisateur, de la recherche de médias, de la gestion des favoris et de la lecture de médias.",
-				"Architecture Dockerisée pour faciliter le déploiement et la gestion de l'application."
-			],
-			tags: ['Next.js', 'Tailwind CSS', 'Go', 'PostgreSQL', 'Docker', 'Spotify API', 'YouTube API'],
-			github: 'https://github.com/Taker-Academy/spotiflyx-apanyan',
-			demo: ''
-		},
-		{
-			category: 'Projets Personnels',
-			image: mockupSiteOrangeBusiness,
-			alt: 'Mockup de landing page pour Orange Business dans le cadre de la project week 2025 à Epitech',
-			title: 'Mockup de landing page pour Orange Business - Project Week 2025',
-			bullets: [
-				"Création d'un mockup de landing page pour Orange Business dans le cadre de la project week 2025 à Epitech.",
-				"Refonte de l'identité digitale d'Orange Business à travers une nouvelle proposition de landing page.",
-				'Maquette réalisée dans le but de présenter une direction créative, non destinée à la production.'
-			],
-			tags: ['Next.js', 'Tailwind CSS'],
-			github: 'https://github.com/novaepitech/Orange-Business-Website-Refresh-Concept-',
-			demo: 'https://orange-business-website-refresh-concept.vercel.app/'
-		},
-		{
-			category: 'Projets Professionnels',
+			category: 'Projets Web',
+			type: 'Professionnel',
 			image: websiteIntegrationChatbot,
 			alt: 'Chatbot et plateforme d’administration pour Endless Paper',
 			title: 'Chatbot et plateforme d’administration pour Endless Paper',
@@ -115,7 +90,8 @@
 			demo: 'https://endlesspaper.app/index.html'
 		},
 		{
-			category: 'Projets Professionnels',
+			category: 'Projets Web',
+			type: 'Professionnel',
 			image: demoBocajoviConnect,
 			alt: 'Plateforme Intranet/Extranet pour Laboratoire de Prothèses Dentaires',
 			title: 'Plateforme Intranet/Extranet pour Laboratoire de Prothèses Dentaires',
@@ -131,7 +107,8 @@
 			demo: ''
 		},
 		{
-			category: 'Projets Professionnels',
+			category: 'Projets Web',
+			type: 'Professionnel',
 			image: webIntegrationPage,
 			alt: 'Page d’intégration web pour Endless Paper',
 			title: 'Page d’intégration Web et améliorations de l’API pour Endless Paper',
@@ -146,7 +123,8 @@
 			demo: 'https://endlesspaper.app/web-integration.html'
 		},
 		{
-			category: 'Projets Professionnels',
+			category: 'Projets Web',
+			type: 'Professionnel',
 			image: portfolioEartsup,
 			alt: 'Site web portfolio pour étudiant à Eartsup',
 			title: 'Site web portfolio pour étudiant à Eartsup',
@@ -158,6 +136,22 @@
 			tags: ['Astro', 'View Transitions', 'TailwindCSS'],
 			github: '',
 			demo: 'https://astro-portfolio-louis-bucher.pages.dev'
+		},
+		{
+			category: 'Projets Web',
+			type: 'Personnel',
+			image: spotiflyx,
+			alt: 'Spotiflyx : Service de streaming musical et vidéo',
+			title: 'Spotiflyx : Service de streaming musical et vidéo',
+			bullets: [
+				"Développement d'une application web de streaming musical et vidéo combinant Spotify et YouTube.",
+				'Utilisation de Next.js pour le frontend, Go pour le backend et PostgreSQL pour la base de données.',
+				"Implémentation de l'authentification utilisateur, de la recherche de médias, de la gestion des favoris et de la lecture de médias.",
+				"Architecture Dockerisée pour faciliter le déploiement et la gestion de l'application."
+			],
+			tags: ['Next.js', 'Tailwind CSS', 'Go', 'PostgreSQL', 'Docker', 'Spotify API', 'YouTube API'],
+			github: 'https://github.com/Taker-Academy/spotiflyx-apanyan',
+			demo: ''
 		}
 	];
 
@@ -177,24 +171,24 @@
 			></div>
 
 			<button
-				bind:this={professionnelsTab}
+				bind:this={gameDevTab}
 				class="relative z-10 flex-1 cursor-pointer rounded-md px-2 py-2 text-center font-medium transition-colors duration-180 {selectedCategory ===
-				'Projets Professionnels'
+				'Projets de Jeux Vidéo'
 					? 'text-white'
 					: 'text-gray-400 hover:text-white'}"
-				onclick={() => (selectedCategory = 'Projets Professionnels')}
+				onclick={() => (selectedCategory = 'Projets de Jeux Vidéo')}
 			>
-				Projets Professionnels
+				Projets de Jeux Vidéo
 			</button>
 			<button
-				bind:this={personnelsTab}
+				bind:this={webTab}
 				class="relative z-10 flex-1 cursor-pointer rounded-md px-2 py-2 text-center font-medium transition-colors duration-180 {selectedCategory ===
-				'Projets Personnels'
+				'Projets Web'
 					? 'text-white'
 					: 'text-gray-400 hover:text-white'}"
-				onclick={() => (selectedCategory = 'Projets Personnels')}
+				onclick={() => (selectedCategory = 'Projets Web')}
 			>
-				Projets Personnels
+				Projets Web
 			</button>
 		</div>
 	</div>
