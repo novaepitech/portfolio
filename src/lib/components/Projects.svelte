@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import ProjectItem from '$lib/components/ProjectItem.svelte';
 
+	import forgeFever from '$lib/assets/Projects/forge_fever.gif';
 	import unseenAnomaly from '$lib/assets/Projects/unseen_anomaly.png?enhanced';
 	import mockupSiteOrangeBusiness from '$lib/assets/Projects/mockup-site-orange_business.png?enhanced';
 	import websiteIntegrationChatbot from '$lib/assets/Projects/website_integration_chatbot.png?enhanced';
@@ -29,6 +30,21 @@
 	});
 
 	const projects = [
+		{
+			category: 'Projets Personnels',
+			image: forgeFever,
+			alt: 'Jeu de rythme Forge Fever développé pour la GMTK Game Jam 2025',
+			title: 'Forge FeveR - GMTK Game Jam 2025',
+			bullets: [
+				"Développement d'un jeu de rythme arcade avec une touche de roguelite pour la GMTK Game Jam 2025 sur le thème 'Loop'.",
+				'Création d’une boucle de jeu intense où la performance rythmique dans des loops musicales courtes détermine la progression ou la régression en difficulté.',
+				"Mise en place d'un système de 'Fever' exponentiel (jusqu'à x32) pour récompenser la précision et d'un système de pénalités sévères pour les erreurs.",
+				"Conception d'une progression tangible où le score améliore visuellement l'épée forgée, avec des paliers servant de checkpoints."
+			],
+			tags: ['Godot', 'GDScript', 'Game Design', 'Rhythm Game', 'Développement de Jeu'],
+			github: 'https://github.com/novaepitech/Forge-FeveR',
+			demo: 'https://vanova.itch.io/forge-fever'
+		},
 		{
 			category: 'Projets Personnels',
 			image: unseenAnomaly,
