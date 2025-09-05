@@ -14,12 +14,14 @@
 				<enhanced:img
 					{alt}
 					class="rounded-lg object-cover shadow-lg transition-shadow duration-300 hover:shadow-xl"
+					loading="lazy"
 					src={image}
 				/>
 			{:else}
 				<img
 					{alt}
 					class="rounded-lg object-cover shadow-lg transition-shadow duration-300 hover:shadow-xl"
+					loading="lazy"
 					src={image}
 				/>
 			{/if}
@@ -68,3 +70,13 @@
 		</div>
 	</div>
 </li>
+
+<style>
+	img {
+		filter: blur(10px);
+		transition: filter 0.5s;
+	}
+	img[loading='lazy']:not([src*='placeholder']) {
+		filter: none;
+	}
+</style>
