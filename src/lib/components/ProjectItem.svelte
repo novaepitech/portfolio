@@ -2,15 +2,52 @@
 	import { ExternalLink, Github } from 'lucide-svelte';
 	import { isEnhancedImage } from '$lib/utils';
 
-	// Add `type` to the destructured props
 	let { image, alt, title, bullets, tags, github, demo, type } = $props();
 
-	// Define classes for the new 'type' badge for easy styling
 	const typeClasses = {
 		Professionnel: 'bg-blue-500/30 text-blue-400',
 		Personnel: 'bg-purple-500/30 text-purple-400',
 		Académique: 'bg-orange-500/30 text-orange-400'
 	};
+
+	function isVideo(src) {
+		if (typeof src !== 'string') return false;
+		const lower = src.toLowerCase();
+		return lower.endsWith('.webm') || lower.endsWith('.mp4');
+	}
+
+	/**
+	 * Svelte Action to lazy load video
+	 * 1. Keeps video paused (and mostly unloaded) until visible.
+	 * 2. Plays when enters viewport.
+	 * 3. Pauses when leaves viewport (saves battery/CPU).
+	 */
+	function lazyPlay(node) {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// Element is visible - start playing
+						node.play().catch(() => {
+							// Handle auto-play restrictions if necessary
+						});
+					} else {
+						// Element is gone - pause to save resources
+						node.pause();
+					}
+				});
+			},
+			{ threshold: 0.05 } // Trigger when 5% visible
+		);
+
+		observer.observe(node);
+
+		return {
+			destroy() {
+				observer.disconnect();
+			}
+		};
+	}
 </script>
 
 <li
@@ -18,7 +55,26 @@
 >
 	<div class="flex flex-col md:flex-row">
 		<div class="mb-4 md:mr-6 md:mb-0 md:w-1/3">
-			{#if isEnhancedImage(image)}
+			{#if isVideo(image)}
+				<!--
+                    Optimization notes:
+                    1. use:lazyPlay -> Only plays when visible.
+                    2. preload="none" -> Prevents downloading bytes until JS tells it to play.
+                    3. muted -> Required for autoplay in most browsers.
+                -->
+				<video
+					use:lazyPlay
+					src={image}
+					class="w-full rounded-lg object-cover shadow-lg transition-shadow duration-300 hover:shadow-xl"
+					loop
+					muted
+					playsinline
+					preload="none"
+					aria-label={alt}
+				>
+					Your browser does not support the video tag.
+				</video>
+			{:else if isEnhancedImage(image)}
 				<enhanced:img
 					{alt}
 					class="rounded-lg object-cover shadow-lg transition-shadow duration-300 hover:shadow-xl"
@@ -37,7 +93,6 @@
 		<div class="md:w-2/3">
 			<div class="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2">
 				<h3 class="text-2xl font-semibold text-gray-100">{title}</h3>
-				<!-- Add the 'type' badge next to the title -->
 				{#if type}
 					<span
 						class="inline-block rounded-full px-3 py-1 text-xs font-semibold {typeClasses[type] ||
@@ -98,5 +153,14 @@
 	}
 	img[loading='lazy']:not([src*='placeholder']) {
 		filter: none;
+	}
+	/* Optional: Add a fade-in for the video too */
+	video {
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
+	/* When video is playing (checking typically via JS classes, but standard opacity 1 is fine once loaded) */
+	video {
+		opacity: 1;
 	}
 </style>
