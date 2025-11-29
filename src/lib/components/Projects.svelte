@@ -4,12 +4,13 @@
 
 	import forgeFever from '$lib/assets/Projects/forge_fever.gif';
 	import unseenAnomaly from '$lib/assets/Projects/unseen_anomaly.png?enhanced';
-	import mockupSiteOrangeBusiness from '$lib/assets/Projects/mockup-site-orange_business.png?enhanced';
 	import websiteIntegrationChatbot from '$lib/assets/Projects/website_integration_chatbot.png?enhanced';
-	import demoBocajoviConnect from '$lib/assets/Projects/demo-bocajovi_connect-compressed.gif';
+	import demoBocajoviConnect from '$lib/assets/Projects/demo-bocajovi_connect-compressed.webm';
 	import webIntegrationPage from '$lib/assets/Projects/website_web_integration_page.png?enhanced';
 	import portfolioEartsup from '$lib/assets/Projects/portfolio-etudiant-eartsup.png?enhanced';
 	import spotiflyx from '$lib/assets/Projects/screenshot-spotiflyx.png?enhanced';
+	import raytracerImg from '$lib/assets/Projects/raytracer.png?enhanced';
+	import rtypeImg from '$lib/assets/Projects/rtype.webm';
 
 	// Default to 'Projets de Jeux Vidéo' to immediately show the most relevant projects
 	let selectedCategory = $state('Projets de Jeux Vidéo');
@@ -62,6 +63,38 @@
 			tags: ['Godot', 'GDScript', 'Game Design', 'Développement de Jeu', 'Blender'],
 			github: 'https://github.com/novaepitech/unseen-anomaly',
 			demo: 'https://vanova.itch.io/unseen-anomaly'
+		},
+		{
+			category: 'Projets de Jeux Vidéo',
+			type: 'Académique',
+			image: rtypeImg,
+			alt: 'Jeu R-Type multijoueur et son moteur ECS',
+			title: 'R-Type & R-Engine (Game Engine)',
+			bullets: [
+				"Conception d'un moteur de jeu personnalisé (R-Engine) basé sur une architecture ECS (Entity Component System) stricte pour la performance.",
+				"Développement d'une version multijoueur du classique R-Type utilisant ce moteur, avec une gestion réseau UDP/TCP asynchrone.",
+				'Contribution majeure sur le cœur du moteur (Contributor #2) : gestion de la mémoire et système de composants.',
+				'Lead sur l’implémentation du gameplay (Contributor #1) : logique des ennemis, power-ups et scrolling parallaxe.'
+			],
+			tags: ['C++', 'ECS Pattern', 'Réseau', 'Architecture Moteur', 'Multijoueur'],
+			github: '',
+			demo: ''
+		},
+		{
+			category: 'Projets de Jeux Vidéo',
+			type: 'Académique',
+			image: raytracerImg,
+			alt: 'Rendu 3D généré par le Raytracer C++',
+			title: 'Raytracer C++ From Scratch',
+			bullets: [
+				"Développement d'un moteur de rendu 3D complet en C++ pur, sans librairie graphique externe (Contributor #1).",
+				'Implémentation mathématique des vecteurs, matrices et du système de caméra pour générer des images photoréalistes.',
+				'Gestion avancée de la lumière : ombres douces, réflexion, réfraction et matériaux complexes.',
+				'Optimisation des calculs de rendu via multithreading pour réduire les temps de génération.'
+			],
+			tags: ['C++', 'Mathématiques 3D', 'Rendering', 'Optimisation', 'Architecture'],
+			github: '',
+			demo: ''
 		},
 		{
 			category: 'Projets Web',

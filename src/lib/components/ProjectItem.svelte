@@ -8,7 +8,8 @@
 	// Define classes for the new 'type' badge for easy styling
 	const typeClasses = {
 		Professionnel: 'bg-blue-500/30 text-blue-400',
-		Personnel: 'bg-purple-500/30 text-purple-400'
+		Personnel: 'bg-purple-500/30 text-purple-400',
+		Académique: 'bg-orange-500/30 text-orange-400'
 	};
 </script>
 
